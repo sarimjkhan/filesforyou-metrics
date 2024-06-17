@@ -1,0 +1,30 @@
+<div>
+    <h2>Historical CPU Usage Data</h2>
+    <div>
+      <label for="clientId">Client ID:</label>
+      <input id="clientId" [(ngModel)]="clientId" placeholder="Enter Client ID" />
+    </div>
+    <div>
+      <label for="startTime">Start Time:</label>
+      <input id="startTime" type="datetime-local" [(ngModel)]="startTime" />
+    </div>
+    <div>
+      <label for="endTime">End Time:</label>
+      <input id="endTime" type="datetime-local" [(ngModel)]="endTime" />
+    </div>
+    <div>
+        <label for="limit">Records Limit:</label>
+        <input id="limit" type="number" [(ngModel)]="limit" />
+      </div>
+    <button (click)="queryData()">Query</button>
+  
+    <div *ngIf="cpuUsageData.length > 0">
+      <h3>Results:</h3>
+      <ul>
+        <li *ngFor="let data of cpuUsageData">
+          Timestamp: {{ data.timestamp }} - Usage: {{ data.usage }}%
+        </li>
+      </ul>
+    </div>
+  </div>
+  

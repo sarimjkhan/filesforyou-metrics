@@ -1,0 +1,35 @@
+@startuml FilesFromYou_System_Architecture
+
+package "Client" {
+  [Measure CPU Usage] -right-> [Send Data]
+}
+
+node "Server" {
+  [Receive Data] -down-> [Process Data]
+  [Process Data] --> [Query Data]
+}
+
+cloud {
+  [Redis Cache]
+}
+
+database "MongoDB" {
+  folder "Data Storage" {
+    [Store CPU Data]
+  }
+}
+
+[Send Data] --> [Receive Data]
+[Process Data] --> [Redis Cache]
+[Redis Cache] --> [Query Data]
+[Process Data] --> [Store CPU Data]
+
+package "Dashboard(Angular)" {
+  [Fetch Display Data] <-- [Query Data]
+  [Display Data]
+}
+
+[Query Data] --> [Fetch Display Data]
+[Fetch Display Data] --> [Display Data]
+
+@enduml

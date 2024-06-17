@@ -1,0 +1,7 @@
+<div>
+    <h1>CPU Usage Dashboard</h1>
+    <div *ngFor="let client of cpuUsageData">
+      <h2>Client ID: {{ client.clientId }}</h2>
+      <p>CPU Usage: {{ client.usage }}%</p>
+    </div>
+</div>

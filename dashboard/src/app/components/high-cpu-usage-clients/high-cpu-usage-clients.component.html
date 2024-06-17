@@ -1,0 +1,26 @@
+<div>
+    <h2>High CPU Usage Clients</h2>
+    <div>
+      <label for="threshold">Threshold (%):</label>
+      <input id="threshold" type="number" [(ngModel)]="threshold" />
+    </div>
+    <div>
+      <label for="startTime">Start Time:</label>
+      <input id="startTime" type="datetime-local" [(ngModel)]="startTime" />
+    </div>
+    <div>
+      <label for="endTime">End Time:</label>
+      <input id="endTime" type="datetime-local" [(ngModel)]="endTime" />
+    </div>
+    <button (click)="queryHighCpuUsage()">Query</button>
+  
+    <div *ngIf="highCpuUsageData.length > 0">
+      <h3>Results:</h3>
+      <ul>
+        <li *ngFor="let data of highCpuUsageData">
+          Client ID: {{ data._id }} - Average Usage: {{ data.averageUsage }}%
+        </li>
+      </ul>
+    </div>
+  </div>
+  

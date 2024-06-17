@@ -1,0 +1,57 @@
+<style>
+  main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    gap: 2rem;
+  }
+
+  .component-container {
+    width: 100%;
+    max-width: 800px;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  input, button {
+    margin-bottom: 1rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #ddd;
+  }
+</style>
+
+<main class="main">
+  <div class="component-container">
+    <app-realtimelisting></app-realtimelisting>
+  </div>
+  <div class="component-container">
+    <app-historicaldata></app-historicaldata>
+  </div>
+  <div class="component-container">
+    <app-high-cpu-usage-clients></app-high-cpu-usage-clients>
+  </div>
+</main>
