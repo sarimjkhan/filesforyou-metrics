@@ -6,7 +6,7 @@
 ## Components
 There are three projects in this system Server, Client and Dashboard.
 
-# Server
+# Server([Readme.md](server/README.md))
 This is the server based on socket.io, which polls the client's metrics(currently cpuUsage) and saves it to the Mongo database and then to redis.
 Mongodb database is used to store the historical data and can be queries using following rest endpoints
 
@@ -17,11 +17,11 @@ Endpoints:
 
 Redis is used as a fast storage which holds the current data for 1 hour(3600s) for real time data.
 
-# Client
+# Client([Readme.md](client/README.md))
 The client actuallu generates some random numbers mimicked as cpu usage to send to the server through socket connections
 You can create multiple clients by running the client project multiple times in multiple terminals.
 
-# Dashboard (powered by Angular)
+# Dashboard (powered by Angular)([Readme.md](dashboard/README.md))
 The dashboard with minimum features is created on Angular which actually simulates the API endpoints mentioned in the server.
 This dashboard shows the following things
 - The real time current cpu usage data for the connected clients within 1 hour(3600s) of time
